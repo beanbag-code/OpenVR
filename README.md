@@ -124,7 +124,8 @@ First flash the Ardrino using any IDE that connects to Ardrino.
 I recommend Ardino IDE as it is simplest. To test, check the serial monitor, you should see many lines of numbers streaming fast that change when you turn the device.
 
 Next boot up VRTrack.
-VRTrack relies on a few dependancies. Using homebrew run this command in the terminal. (brew install opencv glfw imgui apriltag). 
+VRTrack relies on a few dependancies. Using homebrew run this command in the terminal. (brew install opencv glfw apriltag) Then go to the IMGui Github download the project and add it to your project folder.
+
 I would recommend building the project youself. This means using CMake. Look up a tutorial to do so.
 
 Once you have VRTrack up and running use the dropdwon to select your Arduino from the ports. Make sure no other appication is conneced to the Arduino, inculding Arduino IDE.
