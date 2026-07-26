@@ -2,6 +2,14 @@ Hey all!
 Welcome to the OpenVR project.
 The goal of this project was to make a custom VR headset and allow it to work with X-Plane 12 on MacOS.
 Very specific, I know.
+Here is a video showcasing what it looks like.
+
+https://vimeo.com/1213110818?share=copy&fl=sv&fe=ci
+
+Here is a picture of the finished project.
+
+<img width="3024" height="4032" alt="IMG_5685" src="https://github.com/user-attachments/assets/3d51aca2-0fe9-4119-b64f-b5d0660534bd" />
+
 
 Before we begin I will give you a overveiw of the structure of this project.
 First we have the hardware, there is the bill of materials in which you can buy the nessisary components.
