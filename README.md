@@ -1,6 +1,6 @@
 Hey all!
-Wecome to the OpenVR project.
-The goal of this project was to make a custom Vr headset and allow it to work with X-Plane 12 on MacOS.
+Welcome to the OpenVR project.
+The goal of this project was to make a custom VR headset and allow it to work with X-Plane 12 on MacOS.
 Very specific, I know.
 
 Before we begin I will give you a overveiw of the structure of this project.
@@ -9,36 +9,36 @@ The rest is 3D printed.
 
 The software side is where things get intresting.
 
-to understand you must first understand the limitations.
+To understand you must first understand the limitations.
 First of all, macOS does not natively support VR Rendering. So the option in X-Plane to render for a headset does not even exsit on Mac.
 Next, the most poular app for interfacing with X-Plane is OpenTrack. From What I saw it is natively for Windows.
 I did not try to get it to work on Mac, it might be posible, but I opted to make my own tracking code.
 
-Now that you now these limitations, here are all the parts for the software. I will list them in runtime order.
+Now that you understand these limitations, here are all the parts for the software. I will list them in runtime order.
 First the Audrino with the MPU records the rotation of the head and sends it over serial to the computer.
-it is recived by the program VRTrack. VRTrack Takes the data and corrects it and sends it over UDP port to X-Plane 12.
-In my origninal idea VRTrack was going to use AprilTag detection for drift coreection, however the IMU I chose drifts little, so I just commented it all out. 
+It is recived by the program VRTrack. VRTrack takes the data, corrects it and sends it over UDP port to X-Plane 12.
+In my origninal idea, VRTrack would use AprilTag detection for drift coreection, however the IMU I chose drifts little, so I just commented it all out.
 It is still mostly there if you want it back.
 
-Next X_plane recoves the data and turns the pilot's head in the sim accordingly. it then just renders the scene like normal.
-In the background there is a app running called FreeVR. it records the screen, and then aplys lenscorections and makes it so that it shows two eyes.
-The window fo FreeVR is put full screen onto the VR headset screen where it is veiwed through lenes.
+Next X-Plane recoves the data and turns the pilot's head in the sim accordingly. It then just renders the scene like normal.
+In the background there is a app running called FreeVR. it records the screen, and then applies lens corections and makes it so that it shows two eyes.
+The window for FreeVR is put full screen onto the VR headset screen where it is veiwed through lenes.
 
 Got all that?
 
 
 Alright so here is how you build your own headet.
-First Reveiw the Bill Of Materials and purchuse all the parts.
+First reveiw the Bill Of Materials and purchuse all the parts.
 <img width="4032" height="3024" alt="IMG_5944" src="https://github.com/user-attachments/assets/c4421f6e-30af-4631-a5c3-acf8221b2306" />
 
 Next print 1x Light-Hood, 1x Main-body, 1x Screen-Holder, 2x Lens-Holders, 1x Arduino-Holder, 1x Lid, and at least 4x Strap-Holders in PLA/PETG.
 <img width="4032" height="3024" alt="IMG_5942" src="https://github.com/user-attachments/assets/f455fb6b-41d7-4287-abd1-b9f3a21952d2" />
 
 
-Next print the Eye-Mask in TPU. (Note: This part been specificaly desgined to fit my face, if you wish to custimise it for yourself, use the fusion 360 file to edit to model, Scan your face and replace my face scan with yours.)
+Next print the Eye-Mask in TPU. (Note: This part been specificaly desgined to fit my face, if you wish to customize it for yourself, use the Fusion-360 file to edit to model. I photoscanned my face and used the 3d model to cut out the shape. You could feasibly do the same.)
 <img width="3024" height="4032" alt="IMG_5943" src="https://github.com/user-attachments/assets/bd9ee244-b9ee-47aa-935f-06b10d849f49" />
 
-Once you have all the parts you are ready to assemble.
+Once you have all the parts, you are ready to assemble.
 <img width="3024" height="4032" alt="IMG_5941" src="https://github.com/user-attachments/assets/1cc5f8ee-68fc-4a89-ab58-0a814faea4cf" />
 
 Here is what fastening peices you will need.
@@ -74,7 +74,6 @@ Next place the Light-Hood into the Main-Body and then place the Screen-Holder on
 <img width="3024" height="4032" alt="IMG_5952" src="https://github.com/user-attachments/assets/036566ca-f7a9-4085-868f-69b62fed9f82" />
 
 
-
 Next we will work on the Arduino. Solder the headers onto the Nano and the IMU. then solder those parts onto a protoboard and conect the parts. Here is the pinout needed. 
 
 NANO -> IMU
@@ -89,7 +88,7 @@ Here is what my final product looked like, the exact placement doesnt matter muc
 <img width="3024" height="4032" alt="IMG_5953" src="https://github.com/user-attachments/assets/9d300762-28cb-4020-875b-3cf727279682" />
 
 
-Next take the frinished product and place it into the Ardrino-Holder. You may need to modify the part using something sharp in order to make sure whatever cable you use for the Nano will reach it. As you can see from my photo, I had to cut the wall a bit.
+Next take the finished product and place it into the Ardrino-Holder. You may need to modify the part using something sharp in order to make sure whatever cable you use for the Nano will reach it. As you can see from my photo, I had to cut the wall a bit.
 <img width="3024" height="4032" alt="IMG_5954" src="https://github.com/user-attachments/assets/54745aa3-11bc-4e42-a031-d0dfd64306d4" />
 
 Next place the Lid-Part on top and secure it with M2x4mm screws. Again you may need to modify the lid, test the cabe to ensure a fit.
@@ -119,10 +118,13 @@ Next use take a magnet and push it into each hole of the Face-Mask peice, then k
 Finaly, ajust the straps to your head.
 Congrats, it has been fully assembled.
 
-Next we will set up the software. download all the files. First flash the Ardrino using any IDE that connects to Ardrino. I recommend Ardino IDE as it is simplest. To text, check the serial monitor, you should see many lines of numbers streaming fast that schange when you turn the device.
+Next we will set up the software. download all the files. 
+
+First flash the Ardrino using any IDE that connects to Ardrino. 
+I recommend Ardino IDE as it is simplest. To test, check the serial monitor, you should see many lines of numbers streaming fast that change when you turn the device.
 
 Next boot up VRTrack.
-VRTrack relys on a few dependancies. using hoebrew run this command in the terminal. (brew install opencv glfw imgui apriltag). 
+VRTrack relies on a few dependancies. Using homebrew run this command in the terminal. (brew install opencv glfw imgui apriltag). 
 I would recommend building the project youself. This means using CMake. Look up a tutorial to do so.
 
 Once you have VRTrack up and running use the dropdwon to select your Arduino from the ports. Make sure no other appication is conneced to the Arduino, inculding Arduino IDE.
@@ -138,13 +140,11 @@ Use the calibrate to center it if it ever drifts.
 
 
 Next plug in the HDMI display into your HDMI port.
-(Note, I found that this pertucular module is quite finnicy, I recomend only direct HDMI conections, no USB-c adapters. Even then I found I needed to use a program called Better Display and basicaly reflash the EDID to get it to work. If you are having issues I wish you luck. I would recommend using AI to help you troubleshoot.
+(Note, I found that this LCD module is quite finicky, I recomend only direct HDMI conections, no USB-c adapters. Even then I found I needed to use a program called Better Display and basicaly reflash the EDID to get it to work. If you are having issues I wish you luck. I would recommend using AI to help you troubleshoot.
 
 Finaly open the FreeVR App and allow screen recording and put the window onto the display's area, put it into full screen and then fly.
 
 I hope that covers everything. I do not doubt there are issues somewhere, I have only tested it on my M3 Macbook Pro.
 This project is not at all intended for everyone. I made it to chalange myself. That being said if you can use any of this, go right ahead. I will love you hear if you do end up making/using any of this.
-
-
 
 Notes on the AI use. The FreeVR app is entirely vibe coded. I roughly understand how to funtions, but I do not know swift and shaders, so if I built it myself, I would have spent years. as for VRTrack, I did use AI estenively to understand the new systems, but I did write to code myself, using AI only where my knowlage was lacking.
