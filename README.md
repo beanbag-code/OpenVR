@@ -84,13 +84,14 @@ Next place the Light-Hood into the Main-Body and then place the Screen-Holder on
 
 Next we will work on the Arduino. Solder the headers onto the Nano and the IMU. then solder those parts onto a protoboard and conect the parts. Here is the pinout needed. 
 
-NANO -> IMU
-D9 ->   RST
-D8 ->   INT
-A4 ->   SDA
-A5 ->   SCL
-3.3v -> VCC
-GND ->  GND
+|NANO|->|IMU|
+|----|----|----|
+|D9|->|RST|
+|D8|->|INT|
+|A4|->|SDA|
+|A5|->|SCL|
+|3.3v|->|VCC|
+|GND|->|GND|
 
 Here is what my final product looked like, the exact placement doesnt matter much, only that the pins are connected right.
 <img width="3024" height="4032" alt="IMG_5953" src="https://github.com/user-attachments/assets/9d300762-28cb-4020-875b-3cf727279682" />
