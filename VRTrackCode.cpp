@@ -1,9 +1,9 @@
 #define GL_SILENCE_DEPRECATION
 #include <opencv2/opencv.hpp>
 #include <iostream>
-#include "apriltag/apriltag.h"
-#include "apriltag/tag36h11.h"
-#include "apriltag/apriltag_pose.h"
+//#include "apriltag/apriltag.h"
+//#include "apriltag/tag36h11.h"
+//#include "apriltag/apriltag_pose.h"
 #include <opencv2/core/quaternion.hpp>
 #include <fcntl.h>
 #include <unistd.h>
