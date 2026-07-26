@@ -121,21 +121,30 @@ Congrats, it has been fully assembled.
 
 Next we will set up the software. download all the files. First flash the Ardrino using any IDE that connects to Ardrino. I recommend Ardino IDE as it is simplest. To text, check the serial monitor, you should see many lines of numbers streaming fast that schange when you turn the device.
 
-Next boot up VRTrack and X-Plane.
-VRTrack relys on a few dependancies. using homebrew, install, In VRTrack use the dropdwon to select your ardrino from the ports. Make sure no other appication is conneced to the ardrino, inculding ardrino IDE.
+Next boot up VRTrack.
+VRTrack relys on a few dependancies. using hoebrew run this command in the terminal. (brew install opencv glfw imgui apriltag). 
+I would recommend building the project youself. This means using CMake. Look up a tutorial to do so.
+
+Once you have VRTrack up and running use the dropdwon to select your Arduino from the ports. Make sure no other appication is conneced to the Arduino, inculding Arduino IDE.
 
 Click start and then hit calabrate in order to center the head using that direction.
 
-Go into X-Plane-12, go to the network tab and enable use UnPvP for Port forewarding in the UDP ports section.
-When you boot up a flight you should see that you can control the head turn with the ardino.
+Boot up X-Plane-12, go to the network tab and enable use UnPvP for Port Forewarding in the UDP ports section.
+<img width="723" height="678" alt="Screenshot 2026-07-26 at 3 38 43 PM" src="https://github.com/user-attachments/assets/7eeb9388-03cf-4b6d-8bb2-40fb20832fa1" />
+
+When you boot up a flight you should see that you can now control the head turn with the Arduino.
 
 Use the calibrate to center it if it ever drifts.
 
-plug in the hdmi display into your HDMI port.
-(Note, I found that this pertucular module is quite finnicy, I recomend only direct HDMI conections, no USB-c adapters. Even then I found I needed to use a program called better display and basicaly reflash the EDID to get it to work. If you are having issues comment and I can try to figure it out with you.)
 
-finaly open the FreeVR App and allow screen recording and put the window onto the display's area, put it into full screen and then fly.
+Next plug in the HDMI display into your HDMI port.
+(Note, I found that this pertucular module is quite finnicy, I recomend only direct HDMI conections, no USB-c adapters. Even then I found I needed to use a program called Better Display and basicaly reflash the EDID to get it to work. If you are having issues I wish you luck. I would recommend using AI to help you troubleshoot.
 
-I hope that covers everything. I do not doubt there are issues somewher, I have only tested it on my M3 Macbook Pro.
-This project is not at all ment for everyone. I made it to chalange myself. that being said if you can use any of this, go right ahead.
+Finaly open the FreeVR App and allow screen recording and put the window onto the display's area, put it into full screen and then fly.
+
+I hope that covers everything. I do not doubt there are issues somewhere, I have only tested it on my M3 Macbook Pro.
+This project is not at all intended for everyone. I made it to chalange myself. That being said if you can use any of this, go right ahead. I will love you hear if you do end up making/using any of this.
+
+
+
 Notes on the AI use. The FreeVR app is entirely vibe coded. I roughly understand how to funtions, but I do not know swift and shaders, so if I built it myself, I would have spent years. as for VRTrack, I did use AI estenively to understand the new systems, but I did write to code myself, using AI only where my knowlage was lacking.
