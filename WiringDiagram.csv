@@ -4,4 +4,4 @@ D8, ->, INT,
 A4, ->, SDA,
 A5, ->, SCL,
 3.3v, ->, VCC,
-GND, ->, GND
+GND, ->, GND,
