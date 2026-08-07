@@ -1,0 +1,56 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Tracker",
+            "type": "cppbuild",
+            "command": "/usr/bin/clang++",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"-std=c++17",
+				"-arch", "arm64",  // Force M3 Architecture
+				"-I/opt/homebrew/include",
+				"-I/usr/local/include",
+				"-L/opt/homebrew/lib",
+				"-L/usr/local/lib",
+				"${file}",
+				"-mmacosx-version-min=10.15",
+				// Add all your project files here if you aren't using CMake
+				"${fileDirname}/imgui.cpp",
+				"${fileDirname}/imgui_draw.cpp",
+				"${fileDirname}/imgui_widgets.cpp",
+				"${fileDirname}/imgui_tables.cpp",
+				"${fileDirname}/imgui_impl_glfw.cpp",
+				"${fileDirname}/imgui_impl_opengl3.cpp",
+				"${fileDirname}/imgui_demo.cpp",
+				"-lopencv_core",
+				"-lopencv_videoio",
+				"-lopencv_highgui",
+				"-lopencv_imgproc",
+				"-lglfw",
+				"-lGLEW",
+				"-lapriltag",
+				"-framework", "OpenGL",
+				"-framework", "Cocoa",
+				"-framework", "IOKit",
+				"-framework", "CoreVideo",
+				"-o", "${fileDirname}/build/VRTrack"
+			],
+			
+
+            
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Compiler: /usr/bin/clang++"
+        }
+    ]
+}
