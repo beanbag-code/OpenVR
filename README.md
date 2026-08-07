@@ -4,7 +4,7 @@ The goal of this project was to make a custom VR headset and allow it to work wi
 Very specific, I know.
 Here is a video showcasing what it looks like.
 
-https://vimeo.com/1213110818?share=copy&fl=sv&fe=ci
+https://youtube.com/shorts/HwLLGvJYZ5Y?feature=share
 
 Here is a picture of the finished project.
 
